@@ -25,14 +25,14 @@
 
       .main-content {
         font-family: Arial, sans-serif;
-        background-color: #101010;
+        background-color:  black;
         color: white;
       }
 
       .top1 {
         height: 60px;
         width: 100%;
-        background-color: rgb(33, 33, 33);
+        background-color: black;
         position: fixed;
         top: 0;
         left: 0;
@@ -47,6 +47,12 @@
         color: white;
         gap: 15px;
         cursor: pointer;
+      }
+      .left .icon:hover{
+        height: 100%;
+        width: 100%;
+        background-color: rgb(61, 60, 60);
+        border-radius: 25px;
       }
       .yticon {
         font-size: 28px;
@@ -90,6 +96,10 @@
         color: white;
         font-size: 16px;
       }
+
+      .search-btn:hover{
+        background-color: rgb(69, 67, 67);
+      }
       .mic-btn {
         margin-left: 10px;
         height: 40px;
@@ -104,10 +114,17 @@
         align-items: center;
       }
 
+      .mic-btn:hover{
+        background-color: rgb(63, 62, 62);
+        border-radius: 100%;
+      }
+
       .right {
+        position: relative;
+        right: 50px;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
         color: white;
         font-size: 20px;
         cursor: pointer;
@@ -118,7 +135,7 @@
         width: 100%;
         top: 60px;
         left: 250px;
-        background-color: rgba(68, 66, 66, 0.371);
+        background-color: black;
         display: flex;
         position: fixed;
         text-align: center;
@@ -149,10 +166,10 @@
         height: 100dvh;
         width: 250px;
         top: 60px;
-        background-color: rgb(78, 76, 76);
+        background-color:black;
         display: flex;
         flex-direction: column;
-        overflow: auto;
+        overflow-x: auto;
         position: fixed;
       }
 
@@ -209,8 +226,8 @@
       }
 
       .video1 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -227,8 +244,8 @@
       }
 
       .video2 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -245,8 +262,8 @@
       }
 
       .video3 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -263,8 +280,8 @@
       }
 
       .video4 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -280,8 +297,8 @@
       }
 
       .video5 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -298,8 +315,8 @@
       }
 
       .video6 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -316,8 +333,8 @@
       }
 
       .video7 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -334,8 +351,8 @@
       }
 
       .video8 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -352,8 +369,8 @@
       }
 
       .video9 iframe {
-        width: 100%; /* full width of container */
-        height: 200px; /* exact height for video content */
+        width: 100%; 
+        height: 200px; 
         border: none;
         display: block;
       }
@@ -380,7 +397,8 @@
           </div>
 
           <div class="right">
-            <i class="fa-solid fa-video"></i>
+            <i class="fa-solid fa-plus"></i>
+            <p>Create</p>
             <i class="fa-regular fa-bell"></i>
             <i class="fa-solid fa-circle-user"></i>
           </div>
