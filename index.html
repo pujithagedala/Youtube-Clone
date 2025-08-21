@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>YouTube</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+      }
+
+      .main-content {
+        font-family: Arial, sans-serif;
+        background-color: #101010;
+        color: white;
+      }
+
+      .top1 {
+        height: 60px;
+        width: 100%;
+        background-color: rgb(33, 33, 33);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        color: white;
+        gap: 15px;
+        cursor: pointer;
+      }
+      .yticon {
+        font-size: 28px;
+        color: red;
+      }
+      .yttext {
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      .center {
+        display: flex;
+        align-items: center;
+        width: 600px;
+      }
+      .search {
+        height: 38px;
+        width: 500px;
+        padding: 0 15px;
+        border: none;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        font-size: 14px;
+        background-color: #121212;
+        color: white;
+      }
+      .search-btn {
+        height: 40px;
+        width: 60px;
+        border: none;
+        border-radius: 0 20px 20px 0;
+        background-color: #333;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .search-btn i {
+        color: white;
+        font-size: 16px;
+      }
+      .mic-btn {
+        margin-left: 10px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: none;
+        background-color: #222;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .top2 {
+        height: 40px;
+        width: 100%;
+        top: 60px;
+        left: 250px;
+        background-color: rgba(68, 66, 66, 0.371);
+        display: flex;
+        position: fixed;
+        text-align: center;
+        gap: 10px;
+        padding: 0 10px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+        display: flex;
+      }
+
+      .b {
+        font: 20px;
+        color: white;
+        margin: 5px;
+        padding: 8px 16px;
+        background-color: rgb(81, 79, 79);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .b:hover {
+        border-radius: 20px;
+        background-color: rgb(129, 125, 125);
+      }
+      .side {
+        height: 100dvh;
+        width: 250px;
+        top: 60px;
+        background-color: rgb(78, 76, 76);
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        position: fixed;
+      }
+
+      .side p {
+        font-size: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        left: 0;
+        overflow: auto;
+      }
+
+      .common {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 12px 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .common:hover {
+        background-color: rgba(255, 255, 255, 0.132);
+      }
+
+      .common i {
+        font-size: 15px;
+      }
+
+      .middlespace {
+        margin-left: 250px;
+        margin-top: 100px;
+        height: calc(100vh - 100px);
+        overflow-y: auto;
+      }
+
+      .videos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px;
+      }
+      .video1{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video1 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video2{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video2 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video3{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video3 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video4{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video4 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+      .video5{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video5 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video6{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video6 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video7{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video7 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video8{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video8 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+
+      .video9{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .video9 iframe {
+        width: 100%; /* full width of container */
+        height: 200px; /* exact height for video content */
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-content">
+        <div class="top1">
+          <div class="left">
+            <i class="fa-solid fa-bars icon"></i>
+            <i class="fa-brands fa-youtube yticon"></i>
+            <span class="yttext">YouTube</span>
+          </div>
+
+          <div class="center">
+            <input type="text" class="search" placeholder="Search" />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <button class="mic-btn">
+              <i class="fa-solid fa-microphone"></i>
+            </button>
+          </div>
+
+          <div class="right">
+            <i class="fa-solid fa-video"></i>
+            <i class="fa-regular fa-bell"></i>
+            <i class="fa-solid fa-circle-user"></i>
+          </div>
+        </div>
+        <div class="top2">
+          <p class="b">All</p>
+          <p class="b">Web</p>
+          <p class="b">Comedy</p>
+          <p class="b">Drama</p>
+          <p class="b">Suspence</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+          <p class="b">Thrillers</p>
+        </div>
+        <div class="side">
+          <div class="home common">
+            <i class="fa-solid fa-house icon"></i>
+            <p>Home</p>
+          </div>
+          <div class="shorts common">
+            <i class="fa-solid fa-play"></i>
+            <p>Shorts</p>
+          </div>
+          <div class="subscription common">
+            <i class="fa-solid fa-circle-play"></i>
+            <p>Subscriptions</p>
+          </div>
+          <div class="you common">
+            <p>You ></p>
+          </div>
+          <div class="history common">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <p>History</p>
+          </div>
+          <div class="playlist common">
+            <i class="fa-solid fa-music"></i>
+            <p>Playlist</p>
+          </div>
+          <div class="yourvideos common">
+            <i class="fa-solid fa-film"></i>
+            <p>Your videos</p>
+          </div>
+          <div class="courses common">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <p>Your Courses</p>
+          </div>
+          <div class="watchlater common">
+            <i class="fa-regular fa-clock"></i>
+            <p>Watch later</p>
+          </div>
+          <div class="likedvideos common">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <p>Liked videos</p>
+          </div>
+          <div class="sub common">
+            <p>Subscriptions ></p>
+          </div>
+          <div class="circles1 common">
+            <i class="fa-solid fa-circle-user"></i>
+            <p>abc</p>
+          </div>
+          <div class="circles2 common">
+            <i class="fa-solid fa-circle-user"></i>
+            <p>abc</p>
+          </div>
+
+          <div class="circles3 common">
+            <i class="fa-solid fa-circle-user"></i>
+            <p>abc</p>
+          </div>
+
+          <div class="explore common">
+            <p>Explore</p>
+          </div>
+          <div class="shopping common">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <p>shopping</p>
+          </div>
+          <div class="music common">
+            <i class="fa-regular fa-music"></i>
+            <p>Music</p>
+          </div>
+          <div class="movies common">
+            <i class="fa-solid fa-clapperboard"></i>
+            <p>Movies</p>
+          </div>
+          <div class="live common">
+            <i class="fa-solid fa-tower-broadcast"></i>
+            <p>Live</p>
+          </div>
+          <div class="gamming common">
+            <i class="fa-solid fa-gamepad"></i>
+            <p>Gamming</p>
+          </div>
+          <div class="news common">
+            <i class="fa-solid fa-newspaper"></i>
+            <p>News</p>
+          </div>
+          <div class="sports common">
+            <i class="fa-solid fa-trophy"></i>
+            <p>Sports</p>
+          </div>
+          <div class="course common">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <p>Courses</p>
+          </div>
+          <div class="fashon common">
+            <i class="fa-solid fa-vest"></i>
+            <p>Fashion and beauty</p>
+          </div>
+          <div class="podcast common">
+            <i class="fa-solid fa-podcast"></i>
+            <p>Podcast</p>
+          </div>
+          <div class="more common">
+            <p>More from YouTube</p>
+          </div>
+          <div class="premium common">
+            <i class="fa-brands fa-square-youtube"></i>
+            <p>YouTube Premium</p>
+          </div>
+          <div class="studio common">
+            <i class="fa-brands fa-square-youtube"></i>
+            <p>YouTube Studio</p>
+          </div>
+          <div class="song common">
+            <i class="fa-brands fa-square-youtube"></i>
+            <p>YouTube Music</p>
+          </div>
+          <div class="Kids common">
+            <i class="fa-brands fa-square-youtube"></i>
+            <p>YouTube Kids</p>
+          </div>
+          <div class="setting common">
+            <i class="fa-solid fa-gear"></i>
+            <p>Settings</p>
+          </div>
+          <div class="report common">
+            <i class="fa-solid fa-flag"></i>
+            <p>Report History</p>
+          </div>
+          <div class="help common">
+            <i class="fa-solid fa-circle-question"></i>
+            <p>Help</p>
+          </div>
+          <div class="Send common">
+            <i class="fa-solid fa-comment-dots"></i>
+            <p>Send Feedback</p>
+          </div>
+        </div>
+        <div class="middlespace">
+          <div class="videos">
+            <div class="video1">
+              <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video2">
+                <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video3">
+                <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video4">
+                <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video5">
+                <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video6"><iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p></div>
+            <div class="video7">
+                <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video8">
+                <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            <div class="video9">
+                   <iframe
+                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              >
+              </iframe>
+              <p class="caption">
+                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+              </p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
