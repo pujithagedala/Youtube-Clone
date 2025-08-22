@@ -52,7 +52,7 @@
         height: 100%;
         width: 100%;
         background-color: rgb(61, 60, 60);
-        border-radius: 25px;
+        border-radius: 30px;
       }
       .yticon {
         font-size: 28px;
@@ -130,6 +130,30 @@
         cursor: pointer;
       }
 
+      
+      .right .create{
+        display: flex;
+        margin: 10px;
+        padding: 10px;
+        gap: 10px;
+      }
+      .right .create:hover{
+        background-color: rgba(160, 150, 150, 0.408);
+        border-radius: 25px;
+        height: 80%;
+      }
+      .right .bell:hover{
+        background-color: rgba(160, 150, 150, 0.408);
+        border-radius: 25px;
+        height: 80%;
+      }
+      .right .user:hover{
+        background-color: rgba(160, 150, 150, 0.408);
+        border-radius: 25px;
+        height: 100%;
+      }
+      
+
       .top2 {
         height: 40px;
         width: 100%;
@@ -150,10 +174,10 @@
 
       .b {
         font: 20px;
-        color: white;
+        color: rgb(255, 255, 255);
         margin: 5px;
         padding: 8px 16px;
-        background-color: rgb(81, 79, 79);
+        background-color: rgba(81, 79, 79, 0.332);
         border-radius: 10px;
         cursor: pointer;
       }
@@ -213,6 +237,7 @@
         flex-wrap: wrap;
         justify-content: center;
         margin: 10px;
+        
       }
       .video1{
         width: 350px; 
@@ -223,14 +248,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video1 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
+     
 
       .video2{
         width: 350px; 
@@ -241,15 +262,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video2 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
-
+     
       .video3{
         width: 350px; 
         height: 250px; 
@@ -259,14 +275,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video3 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
+      
 
       .video4{
         width: 350px; 
@@ -277,14 +289,11 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video4 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
+      
+
       .video5{
         width: 350px; 
         height: 250px; 
@@ -294,15 +303,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video5 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
-
+      
       .video6{
         width: 350px; 
         height: 250px; 
@@ -312,14 +316,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video6 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
+      
 
       .video7{
         width: 350px; 
@@ -330,15 +330,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video7 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
-
+      
       .video8{
         width: 350px; 
         height: 250px; 
@@ -348,14 +343,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video8 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
-      }
+      
 
       .video9{
         width: 350px; 
@@ -366,14 +357,52 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
       }
 
-      .video9 iframe {
-        width: 100%; 
-        height: 200px; 
-        border: none;
-        display: block;
+      
+
+       .video10{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
       }
+
+      
+
+       .video11{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+     
+
+       .video12{
+        width: 350px; 
+        height: 250px; 
+        background-color: rgb(17, 16, 16);
+        margin: 10px;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      
     </style>
   </head>
   <body>
@@ -397,10 +426,17 @@
           </div>
 
           <div class="right">
-            <i class="fa-solid fa-plus"></i>
+            <div class="create">
+              <i class="fa-solid fa-plus"></i>
             <p>Create</p>
-            <i class="fa-regular fa-bell"></i>
-            <i class="fa-solid fa-circle-user"></i>
+            </div>
+            
+              
+            <i class="fa-regular fa-bell bell"></i>
+            
+            
+              <i class="fa-solid fa-circle-user user"></i>
+            
           </div>
         </div>
         <div class="top2">
@@ -410,23 +446,23 @@
           <p class="b">Drama</p>
           <p class="b">Suspence</p>
           <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
-          <p class="b">Thrillers</p>
+          <p class="b">Podcast</p>
+          <p class="b">Life</p>
+          <p class="b">Asthetic</p>
+          <p class="b">Creators</p>
+          <p class="b">Movies</p>
+          <p class="b">Brahmi</p>
+          <p class="b">Funny</p>
+          <p class="b">Pradeep</p>
+          <p class="b">Dance</p>
+          <p class="b">Songs</p>
+          <p class="b">English</p>
+          <p class="b">CID</p>
+          <p class="b">Crime</p>
+          <p class="b">Noise</p>
+          <p class="b">Raj</p>
+          <p class="b">Web</p>
+          <p class="b">Coding</p>
         </div>
         <div class="side">
           <div class="home common">
@@ -567,118 +603,75 @@
         <div class="middlespace">
           <div class="videos">
             <div class="video1">
-              <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+              <img src="image.png" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+                GUEST YEVARUU?? |100th SPECIAL ON RAW TALKS
               </p>
             </div>
             <div class="video2">
-                <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+                <img src="mahathalli.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+                Naa Life Inthe - The Pessimist || Mahathalli || Tamada Media
               </p>
             </div>
             <div class="video3">
-                <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+               <img src="podcast.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+                Dark Side of South Movies, Star Kids, Struggles, Car Accident & Rajamouli | Nani | FO350 Raj Shamani
               </p>
             </div>
             <div class="video4">
-                <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+              
+               <img src="cute.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+               TRS Kids Special - Masti Time With Aariv & Alyza
               </p>
             </div>
             <div class="video5">
-                <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+                <img src="brahmi.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+               Title Avasaram Leni Episode |Comedy Legend “Dr.Brahmanandam Garu” | Raw Talks Telugu Podcast Ep79
               </p>
             </div>
-            <div class="video6"><iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
-              <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+            <div class="video6">
+              <img src="life.jpg" alt="">
+                It took me 10+ Years to realize what I'll tell you in 8 minutes...
               </p></div>
             <div class="video7">
-                <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+               <img src="mithunam.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+               Mithunam Latest Telugu Full Movie | S. P. Balasubrahmanyam, Lakshmi | Telugu Movies
               </p>
             </div>
             <div class="video8">
-                <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+                <img src="cid.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+                Delivery Girl बनके मुजरिम के घर नजर रखने पहुंची जब ऑफिसर श्रेया | CID | New Episode 2025
               </p>
             </div>
             <div class="video9">
-                   <iframe
-                src="https://www.youtube.com/embed/5sMRNqCIJQE?si=_3BAIrwN_ZD8Cv2M"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              >
-              </iframe>
+                   <img src="raj.jpg" alt="">
               <p class="caption">
-                ‼️🤯GUEST YEVARUU?? | 🔥100th SPECIAL ON RAW TALKS
+                Grandmaster Praggnanandhaa: Childhood, Money, Failure, Samay Raina & PM Modi | FO392 Raj Shamani
+              </p>
+            </div>
+                <div class="video10">
+                   <img src="monkey.jpg" alt="">
+              <p class="caption">
+                Filmymoji Middle Class Madhu | Keerthiseshulu Final Episode | Chivari Korika | MCM
+              </p>
+            </div>
+                <div class="video11">
+                  <img src="pradeep.jpg" alt="">
+              <p class="caption">
+                Hyper Aadi, Sudheer, Pradeep, Sekhar Master Funny Performance | Dhee Championship Battle | ETV
+
+              </p>
+            </div>
+                <div class="video12">
+                   <img src="summer.jpg" alt="">
+              <p class="caption">
+                Summer Kastalu || Mahathalli || Tamada Media
               </p>
             </div>
             
